@@ -6,7 +6,11 @@ import ProductsSlider from '../../components/ProductsSlider';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
+import BlogItem from '../../components/BlogItem';
 
 
 const Home=()=>{
@@ -22,23 +26,7 @@ const Home=()=>{
 
        
 
-        <section className='py-8 bg-white mt-5'>
-            <div className="container">
-                <div className='freeShipping w-[80%] m-auto h-[60px] py-2 p-4 border border-[#ff5252] flex items-center justify-between rounded-md'>
-                    <div className='col1 flex items-center gap-5'>
-                <MdOutlineDeliveryDining className='text-[50px]' />
-                <span className ="text-[20px] font-[600] uppercase">Free Shipping</span>
-                </div>
-
-                <div className="col 2">
-                    <p className='mb-0 font-[500]'>Free Delivery on first Order and over ₹2500  </p>
-                </div>
-                <p className="font-bold text-[20px]">-Only ₹2500</p>
-                </div>
-
-             
-            </div>
-        </section>
+        
 
          <section className='bg-white py-8'> 
         <div className="container">
@@ -69,7 +57,77 @@ const Home=()=>{
                 <ProductsSlider items={5} />
             </div>
         </section>
+        <section className='py-8 bg-white mt-5'>
+            <div className="container">
+                <div className='freeShipping w-[80%] m-auto h-[60px] py-2 p-4 border border-[#ff5252] flex items-center justify-between rounded-md'>
+                    <div className='col1 flex items-center gap-5'>
+                <MdOutlineDeliveryDining className='text-[50px]' />
+                <span className ="text-[20px] font-[600] uppercase">Free Shipping</span>
+                </div>
+
+                <div className="col 2">
+                    <p className='mb-0 font-[500]'>Free Delivery on first Order and over ₹2500  </p>
+                </div>
+                <p className="font-bold text-[20px]">-Only ₹2500</p>
+                </div>
+
+             
+            </div>
+        </section>
+
+  <section className='py-5 bg-white'>
+    <div className='container'>
+        <h3 className='text-[20px] font-[600]'>Latest Products</h3>
+         <ProductsSlider items={5} />
+         </div>
+    </section>
+  
+  <section className='py-5 bg-white'>
+    <div className='container'>
+        <h3 className='text-[20px] font-[600]'>Featured Products</h3>
+         <ProductsSlider items={5} />
+         </div>
+    </section>
+
+    <section className='py-5 pb-8 bg-white'>
+       <div className='container' >
+        <h3 className='text-[20px] font-[600] mb-4'>From the Blog</h3>
+        <Swiper
+                slidesPerView={4}
+                spaceBetween={10}
+                navigation={true}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[Navigation]}
+                className="blogSlider"
+              >
+                <SwiperSlide>
+                    <BlogItem />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <BlogItem />
+                    <SwiperSlide>
+                    <BlogItem />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <BlogItem />
+                </SwiperSlide>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <BlogItem />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <BlogItem />
+                </SwiperSlide>
+                </Swiper>
+
+       </div>
+    </section>
+
         <br/> <br/> 
+
+       
 
 
 

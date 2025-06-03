@@ -14,7 +14,7 @@ export const Navigation=()=>{
   
 
     return (<>
-    <nav className='py-2'>
+    <nav >
         <div className='container flex items-center justify-end'>
         <div className="col-1 w-[20%]">
             <Button className="!text-black gap-1 w-full"onClick={openCategoryPanel}>Categories<GiClick className="text-[18px]  font-bold cursor-pointer "/></Button>
@@ -23,12 +23,12 @@ export const Navigation=()=>{
             <ul className="flex items-center gap-3 nav">
                 <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px]font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Home</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Home</Button>
                     </Link>
                 </li>
                 <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px] font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Fashion</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Fashion</Button>
                     </Link>
                     <div className="submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
                         <ul>
@@ -52,12 +52,12 @@ export const Navigation=()=>{
                 </li>
                 <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px] font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Jewellery</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Jewellery</Button>
                     </Link>
                 </li>
                 <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px] font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Bags</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Bags</Button>
                     </Link>
                     <div className="submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
                         <ul>
@@ -81,7 +81,7 @@ export const Navigation=()=>{
                 </li>
                 <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px] font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Footwear</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Footwear</Button>
                     </Link>
                     <div className="submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
                         <ul>
@@ -105,7 +105,7 @@ export const Navigation=()=>{
                 </li>
                  <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px] font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Beauty</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Beauty</Button>
                     </Link>
                     <div className="submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all">
                         <ul>
@@ -129,7 +129,7 @@ export const Navigation=()=>{
                 </li>
                         <li className="list-none relative">
                     <Link to="/" className="link transition text-[14px] font-[500]"><Button className="link transition
-                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555]">Wellness</Button>
+                    !font-[500] !text-[rgba(0,0,0,0.9)] hover:!text-[#ac5555] !py-4">Wellness</Button>
                     </Link>
                 </li>
             </ul>

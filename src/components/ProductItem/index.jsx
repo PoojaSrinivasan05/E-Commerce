@@ -31,7 +31,8 @@ const ProductItem=()=> {
            
             <div className='action absolute top-[-200px] right-[-5px] z-50 flex items-center gap-1 flex-col transition-all 
             duration-450 group-hover:top-[15px]'>
-                 <Tooltip title="Cart" placement="left">
+                 
+                  <Tooltip title="Cart" placement="left">
                 <button className='!w-[30px] !h-[30px] !min-w-[30px]  text-black'>                
                 <PiShoppingCartSimpleFill className="text-[18px] text-black group-hover:text-black " />
                  </button> 
