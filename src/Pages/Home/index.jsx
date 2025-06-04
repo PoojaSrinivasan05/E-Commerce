@@ -3,7 +3,6 @@ import HomeSlider from '../../components/HomeSlider';
 import HomeCatSlider from '../../components/HomeCatSlider';
 import { MdOutlineDeliveryDining } from "react-icons/md";
 import ProductsSlider from '../../components/ProductsSlider';
-
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,6 +10,7 @@ import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 import BlogItem from '../../components/BlogItem';
+import Footer from '../../components/Footer';
 
 
 const Home=()=>{
@@ -23,11 +23,6 @@ const Home=()=>{
         <>
         <HomeSlider />
         <HomeCatSlider />
-
-       
-
-        
-
          <section className='bg-white py-8'> 
         <div className="container">
             <div className="flex items-center justify-between">
@@ -59,7 +54,7 @@ const Home=()=>{
         </section>
         <section className='py-8 bg-white mt-5'>
             <div className="container">
-                <div className='freeShipping w-[80%] m-auto h-[60px] py-2 p-4 border border-[#ff5252] flex items-center justify-between rounded-md'>
+                <div className='freeShipping w-[80%] m-auto h-[60px] py-2 p-4 border-1 border-[#ff5252] flex items-center justify-between rounded-md'>
                     <div className='col1 flex items-center gap-5'>
                 <MdOutlineDeliveryDining className='text-[50px]' />
                 <span className ="text-[20px] font-[600] uppercase">Free Shipping</span>
@@ -89,12 +84,12 @@ const Home=()=>{
          </div>
     </section>
 
-    <section className='py-5 pb-8 bg-white'>
+    <section className='py-5 pb-8 bg-white blogSection'>
        <div className='container' >
         <h3 className='text-[20px] font-[600] mb-4'>From the Blog</h3>
         <Swiper
                 slidesPerView={4}
-                spaceBetween={10}
+                spaceBetween={30}
                 navigation={true}
                 pagination={{
                   clickable: true,
@@ -107,12 +102,9 @@ const Home=()=>{
                 </SwiperSlide>
                 <SwiperSlide>
                     <BlogItem />
-                    <SwiperSlide>
-                    <BlogItem />
                 </SwiperSlide>
                 <SwiperSlide>
                     <BlogItem />
-                </SwiperSlide>
                 </SwiperSlide>
                 <SwiperSlide>
                     <BlogItem />
@@ -125,7 +117,9 @@ const Home=()=>{
        </div>
     </section>
 
-        <br/> <br/> 
+
+       <Footer />
+ 
 
        
 
