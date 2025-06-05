@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import BlogItem from '../../components/BlogItem';
 import Footer from '../../components/Footer';
 import AdsBanneSlider from '../../components/AdsBannerSlider';
+import HomeBannerV2 from '../../components/HomeSliderV2';
 
 
 const Home=()=>{
@@ -22,7 +23,14 @@ const Home=()=>{
   };
     return(
         <>
-        <HomeSlider />
+       
+       <section className='py-6'>
+        <div className='container flex items-center'>
+        <div className='part1 w-[75%]'>
+            <HomeBannerV2 />
+        </div>
+        </div>
+       </section>
         <HomeCatSlider />
          <section className='bg-white py-8'> 
         <div className="container">

@@ -13,6 +13,7 @@ export const index = () => {
     <div className="homeSlider py-5">
       <div className="container">
         <Swiper
+          loop={true}
           spaceBetween={10}
           navigation={true}
           autoplay={{
