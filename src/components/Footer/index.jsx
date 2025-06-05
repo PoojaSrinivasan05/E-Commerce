@@ -6,10 +6,20 @@ import { GiWallet } from "react-icons/gi";
 import { BiSupport } from "react-icons/bi";
 import { IoChatboxOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { FaFacebookSquare } from "react-icons/fa";
+import { SiYoutubekids } from "react-icons/si";
+import { FaPinterestP } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+
 
 
 const Footer=() =>{
     return(
+        <>
         <Footer className='py-6  bg-[#fafafa]'>
             <div className='container'>
                <div className='flex items-center justify-center gap-2 py-8 pb-8'>
@@ -43,7 +53,7 @@ const Footer=() =>{
                  <p className='text-[12px]  font-[500]'>Contacts us Anytime</p>
                 </div>
                </div>
-
+               <br />
                <hr />
 
 
@@ -103,12 +113,56 @@ const Footer=() =>{
                     </div>
                 </div>
 
-                <div className='part2 w-[35%] flex pl-8'>
+                <div className='part2 w-[35%] pr-8 flex flex-col pl-8'>
+                 <h2  className='text-[18px] font-[600] mb-4'>Subscribe to newsletter</h2>
+                    <p className='text-[13px] font-[400] pb-4'>Subscribe to our latest newsletter to get news about special discounts.
+                    </p>
 
+                    <form className='mt-5'>
+                        <input type="text" className='w-full h-[45px] border outlint-nor pl-4 pr-4m rounded-sm mb-4 focus:border-[rgba(0,0,0,0.3)]'
+                        placeholder='Your Email Address' />
+                        <Button className='btn-org'>SUBSCRIBE</Button>
+                         <FormControlLabel control={<Checkbox />} label="I  agree to the Terms and Conditions" />
+                    </form>
                 </div>
                </div>
             </div>
         </Footer>
+
+
+        <div className='bottomStrip border-t border-[rgba(0,0,0,0.2)] py-3 bg-white'>
+            <div className='container flex items-center justify-between'> 
+                <ul className='flex items-center gap-2'>
+                    <li className='list-none'><Link to="/" target='_blank' className='W-[35px] h-[35px] rounded-full 
+                    border-[rgba(0,0,0,0.1)] flex items-center justify-center group hover:bg primary transition-all'>
+                    <FaFacebookSquare className='text-[20px] group-hover:text-white' />
+                    </Link></li>
+                     <li className='list-none'><Link to="/" target='_blank' className='W-[35px] h-[35px] rounded-full 
+                     border-[rgba(0,0,0,0.1)] flex items-center justify-center group hover:bg primary transition-all'>
+                    < SiYoutubekids  className='text-[20px] group-hover:text-white' />
+                    </Link></li>
+                     <li className='list-none'><Link to="/" target='_blank' className='W-[35px] h-[35px] rounded-full 
+                     border-[rgba(0,0,0,0.1)] flex items-center justify-center group hover:bg primary transition-all'>
+                    <FaPinterestP className='text-[20px] group-hover:text-white' />
+                    </Link></li>
+                     <li className='list-none'><Link to="/" target='_blank' className='W-[35px] h-[35px] rounded-full 
+                     border-[rgba(0,0,0,0.1)] flex items-center justify-center group hover:bg primary transition-all'>
+                    <FaInstagramSquare className='text-[20px] group-hover:text-white' />
+                    </Link></li>
+                </ul>  
+
+                <p className='text-[13px] text-center mb-0'> ⓒ 2025-Ecommerce software by PrestaShop</p>       
+
+                <div className='flex items-center'>
+                    <img scr="/footer1.png"alt="img" />
+                    <img scr="/footer2.png"alt="img" />
+                    <img scr="/footer3.png"alt="img" />
+                    <img scr="/footer4.png"alt="img" />
+                    <img scr="/footer5.png"alt="img" />
+                    </div>     
+            </div>
+        </div>        
+        </>
     )
 }
 

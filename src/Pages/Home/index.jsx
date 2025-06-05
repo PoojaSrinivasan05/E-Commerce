@@ -11,6 +11,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 import BlogItem from '../../components/BlogItem';
 import Footer from '../../components/Footer';
+import AdsBanneSlider from '../../components/AdsBannerSlider';
 
 
 const Home=()=>{
@@ -48,13 +49,12 @@ const Home=()=>{
                         </Tabs>
                     </div>
                 </div>
-
-                <ProductsSlider items={5} />
+               <ProductsSlider items={5} />
             </div>
         </section>
         <section className='py-8 bg-white mt-5'>
             <div className="container">
-                <div className='freeShipping w-[80%] m-auto h-[60px] py-2 p-4 border-1 border-[#ff5252] flex items-center justify-between rounded-md'>
+                <div className='freeShipping w-[80%] m-auto h-[60px] py-2 p-4 border-1 border-[#ff5252] flex items-center justify-between rounded-md mb-7'>
                     <div className='col1 flex items-center gap-5'>
                 <MdOutlineDeliveryDining className='text-[50px]' />
                 <span className ="text-[20px] font-[600] uppercase">Free Shipping</span>
@@ -65,15 +65,20 @@ const Home=()=>{
                 </div>
                 <p className="font-bold text-[20px]">-Only ₹2500</p>
                 </div>
-
+               
              
             </div>
         </section>
+
+
+      <AdsBanneSlider items={4} />  
+
 
   <section className='py-5 bg-white'>
     <div className='container'>
         <h3 className='text-[20px] font-[600]'>Latest Products</h3>
          <ProductsSlider items={5} />
+          <AdsBanneSlider items={4} />  
          </div>
     </section>
   
