@@ -74,7 +74,7 @@ footer form input::placeholder{font-size: 14px;}
 .homeSliderV2 .swiper-slider-active .info h4{right:0px !important;opacity: 1;}
 .homeSliderV2 .swiper-slider-active .info h3{right:0px !important;opacity: 1;}
 .homeSliderV2 .swiper-slider-active .info h2{right:0px !important;opacity: 1;}
-.homeSliderV2 .swiper-slider-active .info button{bottom:0px !important;opacity: 1;}
+.homeSliderV2 .swiper-slider-active .info .btn_{right:0px !important;opacity: 1;}
 
 .homeSliderV2.info h4{transition-duration:2s;}
 .homeSliderV2.info h2{transition-duration:2.3s;}
