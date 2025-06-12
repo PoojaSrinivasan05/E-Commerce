@@ -20,14 +20,14 @@ export const HomeCatSlider=()=>{
         modules={[Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className='pt-3'>
           <Link to="/">
-          <div className="item px-3 py-7 bg-white rounded-sm text-center flex items-center justify-center flex-col ">
+          <div className="item px-3 py-7  bg-white rounded-sm text-center flex items-center justify-center flex-col">
           <img src="https://serviceapi.spicezgold.com/download/1748409729550_fash.png"className='w-[100px] h-[100px] transition-all'/>
           <h3 className='text-[15px] font-[500] mt-3 text-center'>Fashion</h3>
           </div>
           </Link>
-         </SwiperSlide >
+         </SwiperSlide>
          <SwiperSlide className='pt-3'>
           <Link to="/">
           <div className="item px-3 py-7  bg-white rounded-sm text-center flex items-center justify-center flex-col">

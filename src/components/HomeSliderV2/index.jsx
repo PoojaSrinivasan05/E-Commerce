@@ -1,7 +1,6 @@
 import React from "react";
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper/modules';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
@@ -22,7 +21,7 @@ export const HomeBannerV2=()=>{
             disableOnInteraction: false,
           }}
         navigation={true}
-        modules={[EffectFade,Pagination, Navigation,Autoplay]}
+        modules={[Pagination, Navigation,Autoplay]}
         className="homeSliderV2"
       >
         <SwiperSlide>

@@ -7,7 +7,7 @@ import BannerBox from '../BannerBox';
 
 
 
-const AdsBanneSlider=(props)=>{
+const AdsBannerSlider=(props)=>{
     return (
         <div className='w-full py-5'>
         <Swiper
@@ -41,4 +41,4 @@ const AdsBanneSlider=(props)=>{
     )
 }
 
-export default AdsBanneSlider;
+export default AdsBannerSlider;
