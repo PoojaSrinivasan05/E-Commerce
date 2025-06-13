@@ -9,6 +9,9 @@ import { IoGridSharp } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Pagination from '@mui/material/Pagination';
+
+
 
 const ProductListing = () => {
   const [itemView,setItemView]=useState('grid');
@@ -52,13 +55,14 @@ const ProductListing = () => {
 
           <div className="rightContent w-[80%] py-3">
             <div className="bg-[#f1f1f1] p-2 w-full mb-3 rounded-md flex-items-center justify-between">
-              <div className="col1 flex items-center gap-3">
-                <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[#00-]"
+              <div className="col1 flex items-center  ItemViewActions">
+                <Button className={`!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[#00-] ${itemView === "list"&&'active'}`}
                 onClick={()=>setItemView('list')}
                 >
                   <IoMenu className="text-[rgba(0,0,0,0.7)]" />
                 </Button>
-                <Button className="!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[#00-]">
+                <Button className={`!w-[40px] !h-[40px] !min-w-[40px] !rounded-full !text-[#00-]${itemView === "grid"&&'active'}`}
+                onClick={()=>setItemView('grid')}>
                   <IoGridSharp className="text-[rgba(0,0,0,0.7)]" />
                 </Button>
                 <span className="text-[14px] font-[500] pl-3 text-[rgba(0,0,0,0.7]">
@@ -90,7 +94,7 @@ const ProductListing = () => {
                       },
                     }}
                   >
-                    <MenuItem onClick={handleClose} className=" !text-[13px] !text-[#000] !capitalize">Name A to Z</MenuItem>
+                    <MenuItem onClick={handleClose}className=" !text-[13px] !text-[#000] !capitalize">Name A to Z</MenuItem>
                     <MenuItem onClick={handleClose}className=" !text-[13px] !text-[#000] !capitalize">Name Z to A</MenuItem>
                     <MenuItem onClick={handleClose}className=" !text-[13px] !text-[#000] !capitalize">Price A to Z</MenuItem>
                     <MenuItem onClick={handleClose}className=" !text-[13px] !text-[#000] !capitalize">Price Z to A</MenuItem>
@@ -99,9 +103,9 @@ const ProductListing = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-5 md:grid-cols-4 gap-3">
+            <div className={`grid ${itemView ==='grid'? 'grid-cols-5 md:grid-cols-4':'grid-cols-1 md :grid-cols-1'} gap-3`}>
               {
-                itemView === 'grid'?
+                itemView === 'grid'?(
                 <>
               <ProductItem />
               <ProductItem />
@@ -113,7 +117,7 @@ const ProductListing = () => {
               <ProductItem />
               <ProductItem />
                 </>
-                :
+  ):(
                 <>
               <ProductItemListView />
               <ProductItemListView />
@@ -125,9 +129,12 @@ const ProductListing = () => {
               <ProductItemListView />
               <ProductItemListView />
                </>
-              }
+              )}
               
             </div>
+            <div className="flex items-center justify-center mt-">
+                  <Pagination count={10} showFirstButton showLastButton />
+              </div>
           </div>
         </div>
       </div>
