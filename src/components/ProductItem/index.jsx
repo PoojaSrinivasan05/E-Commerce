@@ -52,7 +52,7 @@ const ProductItem = () => {
         </div>
       </div>
       <div className="info p-3 py-4 ">
-        <h6 className="text-[14px]">
+        <h6 className="text-[14px] !font-[400]">
           <Link to="/" className="link">
             CLAFOUTIS
           </Link>
