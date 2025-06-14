@@ -108,7 +108,7 @@ export const ProductZoom = () => {
                 onClick={() => goto(6)}
               >
                 <img
-                  src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/110-home_default/hummingbird-vector-graphics.jpg"
+                  src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/48-home_default/the-adventure-begins-framed-poster.jpg"
                   className="w-full
                 transition-all group-hover:scale-105"
                 />

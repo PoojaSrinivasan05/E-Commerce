@@ -17,33 +17,33 @@ const Footer = () => {
       <footer className="py-6 bg-[#fafafa]">
         <div className="container">
           <div className="flex items-center justify-center gap-2 py-8 pb-8">
-            <div className="w-full text-center justify-center flex-col group w-[15%]">
+            <div className="w-full text-center justify-center  flex-col group w-[15%]">
               <MdLocalShipping className="text-[50px] transition-all duration-300 group-hover:text-primary group-hover:translate-y-1" />
-              <h3 className="text-[16px] font-[600] mt-3">Free Shipping</h3>
+              <h3 className="text-[16px] font-[600]">Free Shipping</h3>
               <p className="text-[12px] font-[500]">For all Orders over ₹2500</p>
             </div>
 
             <div className="w-full text-center justify-center flex-col group w-[15%]">
               <GiReturnArrow className="text-[50px] transition-all duration-300 group-hover:text-primary group-hover:translate-y-1" />
-              <h3 className="text-[16px] font-[600] mt-3">30 Days Return</h3>
+              <h3 className="text-[16px] font-[600] ">30 Days Return</h3>
               <p className="text-[12px] font-[500]">For an exchange product</p>
             </div>
 
             <div className="w-full text-center justify-center flex-col group w-[15%]">
               <GiWallet className="text-[50px] transition-all duration-300 group-hover:text-primary group-hover:translate-y-1" />
-              <h3 className="text-[16px] font-[600] mt-3">Secured Payment</h3>
+              <h3 className="text-[16px] font-[600] ">Secured Payment</h3>
               <p className="text-[12px] font-[500]">Payment Cards Accepted</p>
             </div>
 
             <div className="w-full text-center justify-center flex-col group w-[15%]">
               <ImGift className="text-[50px] transition-all duration-300 group-hover:text-primary group-hover:translate-y-1" />
-              <h3 className="text-[16px] font-[600] mt-3">Special Gifts</h3>
+              <h3 className="text-[16px] font-[600] ">Special Gifts</h3>
               <p className="text-[12px] font-[500]">Our First Product Order</p>
             </div>
 
             <div className="w-full text-center justify-center flex-col group w-[15%]">
               <BiSupport className="text-[50px] transition-all duration-300 group-hover:text-primary group-hover:translate-y-1" />
-              <h3 className="text-[16px] font-[600] mt-3">Support 24/7</h3>
+              <h3 className="text-[16px] font-[600]">Support 24/7</h3>
               <p className="text-[12px] font-[500]">Contact us Anytime</p>
             </div>
           </div>

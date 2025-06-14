@@ -8,7 +8,7 @@ body{
    font-family: "Playpen Sans", cursive;
   font-optical-sizing: auto;
   background-color:#f5f0f0;
-  color: #666;
+  color: #3b3b3b;
   overflow-x:hidden;
 }
 
@@ -101,3 +101,12 @@ Mui-selected.MuiPaginationItem-page{background: #ac5555 !important;color: #fff !
 .zoomProductSliderThumbs .swiper-button-prev{top: 20px !important;left:0 !important;width: 100% !important; height: 30px !important;border-radius: 0px !important;}
 .zoomProductSliderThumbs .swiper-button-prev:after{transform: rotate(90deg);}
 .zoomProductSliderThumbs .swiper-button-next:after{transform: rotate(90deg);}
+
+.productContent .actions button{min-width:40px !important; height: 30px !important;border: 1px solid rgba(0, 0, 0, 0.1) !important; color: rgba(0, 0, 0, 0.70) !important;}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=nummber]::-webkit-outer-spin-button{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+   appearance :none;
+}
