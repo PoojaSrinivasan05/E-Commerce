@@ -7,9 +7,11 @@ import { FaHeartCirclePlus } from "react-icons/fa6";
 import { MdZoomOutMap } from "react-icons/md";
 import Tooltip from "@mui/material/Tooltip";
 import { Button } from "@mui/material";
-
+import { useContext } from "react";
+import { MyContext } from "../../App";
 
 const ProductItem = () => {
+  const context =useContext(MyContext);
   return (
     <div className="productItem h-[180px] shadow-lg rounded-md overflow-hidden border-1 border-[rgba(0,0,0,0.1)] flex items-center">
       <div className=" group imgWrapper w-[25%]   rounded-md relative">
@@ -48,7 +50,7 @@ const ProductItem = () => {
           </Tooltip>
           <Tooltip title="View Detaiils" placement="left">
             <button className="!w-[30px] !h-[30px] !min-w-[30px]text-black">
-              <MdZoomOutMap className="text-[18px] text-black group-hover:text-black " />
+              <MdZoomOutMap className="text-[18px] text-black group-hover:text-black " onClick={()=>context.setOpenProductDetailsModel(true)} />
             </button>
           </Tooltip>
         </div>
