@@ -9,6 +9,8 @@ import ProductDetails from "./Pages/ProductDetails";
 import {createContext} from "react";
 import { IoClose } from "react-icons/io5";
 import ProductDetailsComponent from "./components/ProductDetails";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register"
 
 
 import Button from '@mui/material/Button';
@@ -46,6 +48,8 @@ function App() {
           <Route path={"/"} exact={true} element={<Home />} />
           <Route path={"productListing"} exact={true} element={<ProductListing />} />
            <Route path={"/product/:id"} exact={true} element={<ProductDetails />} />
+           <Route path={"/login"} exact={true} element={<Login />} />
+            <Route path={"/register"} exact={true} element={<Register />} />
         </Routes>
         <Footer />
         </MyContext.Provider>
