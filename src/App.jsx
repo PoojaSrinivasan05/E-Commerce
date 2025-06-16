@@ -11,6 +11,7 @@ import { IoClose } from "react-icons/io5";
 import ProductDetailsComponent from "./components/ProductDetails";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import CartPage from "./Pages/Cart";
 
 
 import Button from "@mui/material/Button";
@@ -61,6 +62,7 @@ function App() {
             />
             <Route path={"/login"} exact={true} element={<Login />} />
             <Route path={"/register"} exact={true} element={<Register />} />
+             <Route path={"/Cart"} exact={true} element={<CartPage />} />
           </Routes>
           <Footer />
         </MyContext.Provider>

@@ -121,3 +121,5 @@ input[type=nummber]::-webkit-outer-spin-button{
 .productsSlider .swiper ,.blogSection .swiper {overflow:hidden !important;}
 
 .cartPanel .MuiPaper-root{width:400px !important; overflow: hidden;}
+
+#size-menu .MuiButtonBase-root{foot-size :12px !important;}
