@@ -22,8 +22,8 @@ h1,h2,h3,h4,h5,h6{font-weight: 600;}
 .container{width:95%;margin:auto;}
 header .top-strip{border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1);};
 
-.btn-org {background: #ac5555 !important; color: #fff !important; font-weight: 500; font-size: 16px;padding: 7px 10px !important;}
-.btn-org:hover{background: #c27070 !important;color:#000 !important;}
+.btn-org{background: #df3a3a !important; color: #fff !important; font-weight: 500 !important; font-size: 16px !important;padding: 7px 10px !important;}
+.btn-org:hover{background: #c43939 !important;color:#000 !important;}
 
 .btn-lg{ font-size: 18px;padding: 10px 10px !important }
 .link:hover{color:#ac5555;}
@@ -116,3 +116,8 @@ input[type=nummber]::-webkit-outer-spin-button{
 
 .reviewScroll::-webkit-scrollbar{width: 5px !important;}
 .reviewScroll::-webkit-scrollbar-thumb{background: #ccc !important;}
+
+.productDetailModel .MuiDialogContent-root{padding:0px !important;}
+.productsSlider .swiper ,.blogSection .swiper {overflow:hidden !important;}
+
+.cartPanel .MuiPaper-root{width:400px !important; overflow: hidden;}

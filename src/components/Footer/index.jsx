@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdLocalShipping } from "react-icons/md";
 import { GiReturnArrow, GiWallet } from "react-icons/gi";
 import { ImGift } from "react-icons/im";
@@ -10,8 +10,15 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { FaFacebookSquare, FaPinterestP, FaInstagramSquare } from "react-icons/fa";
 import { SiYoutubekids } from "react-icons/si";
+import Drawer from "@mui/material/Drawer";
+import CartPanel from "../CartPanel";
+import { MyContext } from "../../App";
+import { IoClose } from "react-icons/io5";
+
 
 const Footer = () => {
+
+  const context=useContext(MyContext);
   return (
     <>
       <footer className="py-6 bg-[#fafafa]">
@@ -144,6 +151,24 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+
+
+       <Drawer
+        open={context.openCartPanel}
+        onClose={()=>context.toggleCartPanel(false)}
+        anchor={"right"}
+        className="w-[500px] cartPanel overflow-hidden"
+      >
+        <div className="flex items-center justify-between py-3 px-4 gap-3 border-b border-[rgba(0,0,0,0.1)] overflow-hidden">
+          <h4>Shopping Cart(1) </h4>
+          <IoClose
+            className="text-[20px] cursor-pointer"
+            onClick={context.toggleCartPanel(false)}
+          />
+        </div>
+        <CartPanel/>
+      </Drawer>
     </>
   );
 };
