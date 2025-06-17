@@ -12,6 +12,9 @@ import ProductDetailsComponent from "./components/ProductDetails";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import CartPage from "./Pages/Cart";
+import Verify from "./Pages/Verify";
+import ForgotPassword from "./Pages/ForgotPassword";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 import Button from "@mui/material/Button";
@@ -28,6 +31,17 @@ function App() {
     setOpenCartPanel(newOpen);
   };
 
+  const openAlertBox =(status,msg)=>{
+    if(status==="success"){
+     toast.success(msg);
+    }
+    if(status==="error"){
+     toast.error(msg);
+    }
+    
+
+  }
+
   const [openProductDetailsModel, setOpenProductDetailsModel] = useState(false);
   const [maxWidth] = useState("lg");
   const [fullWidth] = useState(true);
@@ -40,7 +54,8 @@ function App() {
     setOpenProductDetailsModel,
     setOpenCartPanel,
     toggleCartPanel,
-    openCartPanel
+    openCartPanel,
+    openAlertBox
   };
 
   return (
@@ -63,10 +78,16 @@ function App() {
             <Route path={"/login"} exact={true} element={<Login />} />
             <Route path={"/register"} exact={true} element={<Register />} />
              <Route path={"/Cart"} exact={true} element={<CartPage />} />
+              <Route path={"/verify"} exact={true} element={<Verify />} />
+               <Route path={"/forgot-password"} exact={true} element={<ForgotPassword />} />
           </Routes>
           <Footer />
         </MyContext.Provider>
       </BrowserRouter>
+
+
+      <Toaster />
+
       <Dialog
         fullWidth={fullWidth}
         maxWidth={maxWidth}
