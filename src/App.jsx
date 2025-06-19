@@ -14,36 +14,36 @@ import Register from "./Pages/Register";
 import CartPage from "./Pages/Cart";
 import Verify from "./Pages/Verify";
 import ForgotPassword from "./Pages/ForgotPassword";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import ProductZoom from "./components/ProductZoom";
 import Checkout from "./Pages/CheckOut";
+import MyAccount from "./Pages/MyAccount";
 
 const MyContext = createContext();
 
 function App() {
   const [openCartPanel, setOpenCartPanel] = useState(false);
+  const [maxWidth] = useState("lg");
+  const [fullWidth] = useState(true);
+  const [isLogin,setIsLogin]=useState(true);
 
   const toggleCartPanel = (newOpen) => () => {
     setOpenCartPanel(newOpen);
   };
 
-  const openAlertBox =(status,msg)=>{
-    if(status==="success"){
-     toast.success(msg);
+  const openAlertBox = (status, msg) => {
+    if (status === "success") {
+      toast.success(msg);
     }
-    if(status==="error"){
-     toast.error(msg);
+    if (status === "error") {
+      toast.error(msg);
     }
-    
-
-  }
+  };
 
   const [openProductDetailsModel, setOpenProductDetailsModel] = useState(false);
-  const [maxWidth] = useState("lg");
-  const [fullWidth] = useState(true);
 
   const handleCloseProductDetailsModel = () => {
     setOpenProductDetailsModel(false);
@@ -54,7 +54,9 @@ function App() {
     setOpenCartPanel,
     toggleCartPanel,
     openCartPanel,
-    openAlertBox
+    openAlertBox,
+    isLogin,
+    setIsLogin
   };
 
   return (
@@ -76,16 +78,19 @@ function App() {
             />
             <Route path={"/login"} exact={true} element={<Login />} />
             <Route path={"/register"} exact={true} element={<Register />} />
-             <Route path={"/Cart"} exact={true} element={<CartPage />} />
-              <Route path={"/verify"} exact={true} element={<Verify />} />
-               <Route path={"/forgot-password"} exact={true} element={<ForgotPassword />} />
-               <Route path={"/checkout"} exact={true} element={<Checkout />} />
-               
+            <Route path={"/Cart"} exact={true} element={<CartPage />} />
+            <Route path={"/verify"} exact={true} element={<Verify />} />
+            <Route
+              path={"/forgot-password"}
+              exact={true}
+              element={<ForgotPassword />}
+            />
+            <Route path={"/checkout"} exact={true} element={<Checkout />} />
+            <Route path={"/my-account"} exact={true} element={<MyAccount />} />
           </Routes>
           <Footer />
         </MyContext.Provider>
       </BrowserRouter>
-
 
       <Toaster />
 
@@ -117,7 +122,6 @@ function App() {
           </div>
         </DialogContent>
       </Dialog>
-     
     </>
   );
 }
