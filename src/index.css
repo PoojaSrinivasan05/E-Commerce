@@ -132,3 +132,8 @@ input[type=nummber]::-webkit-outer-spin-button{
 .otpBox .container{height: 90vh; display: flex;}
 
 #account-menu .MuiPaper-root{width: 300px !important;}
+
+.myAccountTabs li a{position :relative;display: block; padding: 0px 0px;}
+.myAccountTabs li a:before{content:''; width:3px; height:100%; position:absolute ; top:0px;left:0px;background: #ac5555;transition:all 0.3s ease-in-out;opacity: 0;}
+
+.myAccountTabs li a.active::before {height:100%; opacity:1; top:0px;}
