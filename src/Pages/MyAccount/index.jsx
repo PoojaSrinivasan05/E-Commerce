@@ -6,6 +6,7 @@ import { IoBagCheck } from "react-icons/io5";
 import { TbLogout } from "react-icons/tb";
 import { FaHeartCircleCheck } from "react-icons/fa6";
 import { NavLink } from "react-router";
+import TextField from "@mui/material/TextField";
 
 const MyAccount = () => {
   return (
@@ -47,15 +48,11 @@ const MyAccount = () => {
                 </NavLink>
               </li>
               <li className="w-full">
-                <NavLink
-                  to="/my-list"
-                  exact={true}
-                  activeclassName="isActive"
-                >
-                <Button className="w-full !text-left  !px-5 !justify-start !capitalize !text-[rgba(0,0,0,0.8)] !rounded-none flex items-center gap-2">
-                  <FaHeartCircleCheck className="text-[18px]" />
-                  My List
-                </Button>
+                <NavLink to="/my-list" exact={true} activeclassName="isActive">
+                  <Button className="w-full !text-left  !px-5 !justify-start !capitalize !text-[rgba(0,0,0,0.8)] !rounded-none flex items-center gap-2">
+                    <FaHeartCircleCheck className="text-[18px]" />
+                    My List
+                  </Button>
                 </NavLink>
               </li>
               <li className="w-full">
@@ -64,25 +61,70 @@ const MyAccount = () => {
                   exact={true}
                   activeclassName="isActive"
                 >
-                <Button className="w-full !text-left  !px-5 !justify-start !capitalize !text-[rgba(0,0,0,0.8)] !rounded-none flex items-center gap-2">
-                  <IoBagCheck className="text-[18px]" />
-                  My Orders
-                </Button>
+                  <Button className="w-full !text-left  !px-5 !justify-start !capitalize !text-[rgba(0,0,0,0.8)] !rounded-none flex items-center gap-2">
+                    <IoBagCheck className="text-[18px]" />
+                    My Orders
+                  </Button>
                 </NavLink>
               </li>
               <li className="w-full">
                 <NavLink
-                  to="/my-account"
+                  to="/my-orders"
                   exact={true}
                   activeclassName="isActive"
                 >
-                <Button className="w-full !text-left  !px-5 !justify-start !capitalize !text-[rgba(0,0,0,0.8)] !rounded-none flex items-center gap-2">
-                  <TbLogout className="text-[18px]" />
-                  Logout
-                </Button>
+                  <Button className="w-full !text-left  !px-5 !justify-start !capitalize !text-[rgba(0,0,0,0.8)] !rounded-none flex items-center gap-2">
+                    <TbLogout className="text-[18px]" />
+                    Log Out
+                  </Button>
                 </NavLink>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div className="col2 w-[50]">
+          <div className="card bg-white p-5 shadow-md rounded-md">
+            <h2 className="pb-3">My Profile</h2>
+            <hr />
+            <form className="mt-5">
+              <div className="flex items-center gap-5 ">
+                <div className="w-[50%]">
+                  <TextField
+                    size="small"
+                    label="Full Name"
+                    variant="outlined"
+                    className="w-full"
+                  />
+                </div>
+
+                <div className="w-[50%]">
+                  <TextField
+                    size="small"
+                    label="Email"
+                    variant="outlined"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center mt-4 gap-5 ">
+                <div className="w-[50%]">
+                  <TextField
+                    size="small"
+                    label="Phone Number"
+                    variant="outlined"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+
+              <br />
+              <div className="flex items-center">
+                <Button className="btn-org btn-lg w-[100px]">Save</Button>
+                <Button className="btn-org btn-border btn-lg  w-[100px]">Cancel</Button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -25,6 +25,9 @@ header .top-strip{border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px s
 .btn-org{background: #df3a3a !important; color: #fff !important; font-weight: 500 !important; font-size: 16px !important;padding: 7px 10px !important;}
 .btn-org:hover{background: #c43939 !important;color:#000 !important;}
 
+.btn-org.btn-border{background: none!important; color:#ac5555 !important; border:1px  solid #ac5555 !important; font-weight: 500 !important; font-size: 16px !important;padding: 7px 10px !important;}
+.btn-org.btn-border:hover{background: #171717 !important;color:#000 !important; color: #fff !important;border:1px  solid #ac5555 !important;}
+
 .btn-lg{ font-size: 18px;padding: 10px 10px !important }
 .link:hover{color:#ac5555;}
 
@@ -133,7 +136,9 @@ input[type=nummber]::-webkit-outer-spin-button{
 
 #account-menu .MuiPaper-root{width: 300px !important;}
 
+
 .myAccountTabs li a{position :relative;display: block; padding: 0px 0px;}
 .myAccountTabs li a:before{content:''; width:3px; height:100%; position:absolute ; top:0px;left:0px;background: #ac5555;transition:all 0.3s ease-in-out;opacity: 0;}
 
 .myAccountTabs li a.active::before {height:100%; opacity:1; top:0px;}
+.myAccountTabs li a.active button svg{color: #ac5555 !important;opacity: 1 !important;}

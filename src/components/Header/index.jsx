@@ -154,13 +154,16 @@ export const Header = () => {
                       <FaUser className="text-[15px]" /> <span className="text-[13px]">My Account</span>
                     </MenuItem>
                     </Link>
+                    <Link to="/my-orders" className="w-full block">
                     <MenuItem onClick={handleClose}className="flex gap-2 !py-2">
                       <IoBagCheck className="text-[15px]" /> <span className="text-[13px]">Orders</span>
                     </MenuItem>
+                    </Link>
+                    <Link to="/my-list" className="w-full block">
                     <MenuItem onClick={handleClose}className="flex gap-2 !py-2">
                       <FaHeartCircleCheck className="text-[15px]"/> <span className="text-[13px]">My List</span>
                     </MenuItem>
-                    <Divider />
+                    </Link>
                     <MenuItem onClick={handleClose}className="flex gap-2 !py-2">
                       <TbLogout className="text-[15px]" /><span className="text-[13px]"> Logout</span>
                     </MenuItem>
