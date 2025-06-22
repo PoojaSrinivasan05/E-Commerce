@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import Rating from "@mui/material/Rating";
@@ -29,7 +30,7 @@ const MyListItems = () => {
 
         <Rating name="size-small" defaultValue={5} size="small" readOnly />
 
-        <div className="flex items-center gap-4 m-2">
+        <div className="flex items-center gap-4 m-2 mb-2">
           <span className="oldPrice line-through text-gray-500 text-[12px]">
             ₹5,000
           </span>
@@ -40,9 +41,8 @@ const MyListItems = () => {
             40% off
           </span>
         </div>
-        <br />
 
-        <Button>Add to Cart</Button>
+        <Button className="btn-org btn-sm">Add to Cart</Button>
 
 
       </div>

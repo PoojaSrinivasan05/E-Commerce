@@ -1,14 +1,19 @@
 import React from "react";
-import { Button } from "@mui/material";
 import { IoBagCheckSharp } from "react-icons/io5";
 import MyListItems from "./myListItems";
+import AccountSideBar from "../../components/AccountSidebar";
 
 export const MyList = () => {
   return (
-    <section className="section py-10 pb-10">
-      <div className="container w-[80%] max-w-[80%] flex gap-5">
-        <div className="leftPart w-[70%] m-auto">
-          <div className="shadow-md rounded-m  bg-white">
+
+     <section className="py-10 w-full">
+          <div className="container flex gap-5">
+            <div className="col1 w-[20%]">
+            <AccountSideBar/>
+            </div>
+    
+            <div className="col2 w-[70]">
+              <div className="shadow-md rounded-m  bg-white">
             <div className="py-2 px-3 border-b border-[rgba(0,0,0,0.1)]">
               <h2>My List</h2>
               <p className="mt-0">
@@ -23,9 +28,9 @@ export const MyList = () => {
             <MyListItems/>
             <MyListItems/>
           </div>
-        </div>
-      </div>
-    </section>
+            </div>
+          </div>
+        </section>
   );
 };
 
