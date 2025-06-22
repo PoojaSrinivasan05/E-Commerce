@@ -19,6 +19,8 @@ h1,h2,h3,h4,h5,h6{font-weight: 600;}
    ::-webkit-scrollbar-thumb{background:#ccc;}
    ::-webkit-scrollbar-track{background:#fff;}
 
+   .overflow-x-auto::-webkit-scrollbar-thumb{background:#ccc;}
+
 .container{width:95%;margin:auto;}
 header .top-strip{border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1);};
 
