@@ -1,1 +1,6 @@
+body{font-family: "Playfair Display", serif;}
 .MuiBadge-badge{background-color: #ac5555 !important;}
+
+.ReactCollapse--collapse {
+  transition: height 400ms;
+}
