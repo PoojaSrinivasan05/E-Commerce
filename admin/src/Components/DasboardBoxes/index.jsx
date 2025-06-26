@@ -19,7 +19,7 @@ const DashboardBoxes =()=>{
         className="dashboardBoxesSlider"
       >
         <SwiperSlide>
-          <div className="box p-5 cursor-auto hover:bg-[#f1f1f1] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
+          <div className="box p-5 cursor-auto hover:bg-[#fafafa] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
             <FiGift className="text-[30px] text-[#3872fa]" />
             <div className="info w-[70%]">
                 <h3>New Orders</h3>
@@ -30,7 +30,7 @@ const DashboardBoxes =()=>{
         </SwiperSlide>
 
          <SwiperSlide>
-          <div className="box p-5 cursor-auto hover:bg-[#f1f1f1] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
+          <div className="box p-5 cursor-auto hover:bg-[#fafafa] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
             <AiOutlinePieChart className="text-[30px] text-[#10b981]" />
             <div className="info w-[70%]">
                 <h3>Sales</h3>
@@ -41,7 +41,7 @@ const DashboardBoxes =()=>{
         </SwiperSlide>
 
          <SwiperSlide>
-          <div className="box p-5 cursor-auto hover:bg-[#f1f1f1] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
+          <div className="box p-5 cursor-auto hover:bg-[#fafafa] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
             <BsBank className="text-[30px] text-[#3872fa]" />
             <div className="info w-[70%]">
                 <h3>Revenue</h3>
@@ -52,7 +52,7 @@ const DashboardBoxes =()=>{
         </SwiperSlide>
 
          <SwiperSlide>
-          <div className="box p-5 cursor-auto hover:bg-[#f1f1f1] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
+          <div className="box p-5 cursor-auto hover:bg-[#fafafa] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
             <RiProductHuntLine className="text-[30px] text-[#7928ca]" />
             <div className="info w-[70%]">
                 <h3>Total Products</h3>
