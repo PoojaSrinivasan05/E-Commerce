@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
@@ -8,6 +8,7 @@ import { FaBell, FaRegUser } from "react-icons/fa";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import {IoMdLogOut}  from "react-icons/io";
+import {MyContext} from "../../App";
 
 
 
@@ -30,10 +31,14 @@ const Header = () => {
   const handleCloseMyAcc = () => {
     setAnchorMyAcc(null);
   };
+
+  const context = useContext(MyContext);
+
   return (
     <header className="w-full h-[auto] pl-64 shadow-md py-1 pr-7 bg-[#fff]  flex items-center justify-between">
       <div className="part1">
-        <Button className="!w-[40px] h-[50px] !rounded-full !min-w-[40px] text-[rgba(0,0,0,0.8)]">
+        <Button className="!w-[40px] h-[50px] !rounded-full !min-w-[40px] text-[rgba(0,0,0,0.8)]" onClick={context.setisSidebarOpen(!context.isSidebarOpen)}
+        >
           <RiMenu2Fill className="text-[18px] text-[rgba(0,0,0,0.8)]" />
         </Button>
       </div>

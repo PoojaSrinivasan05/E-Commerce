@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { FaRegImages } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { IoBagCheckOutline } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import { GoTriangleDown } from "react-icons/go";
 import { Collapse } from "react-collapse";
+import {MyContext} from "../../App";
 
 const Sidebar = () => {
   const [submenuIndex, setSubmenuIndex] = useState(null);
@@ -17,6 +18,8 @@ const Sidebar = () => {
   const isOpenSubMenu = (index) => {
     setSubmenuIndex(submenuIndex === index ? null : index);
   };
+
+ const context = useContext(MyContext);
 
   return (
     <div className="sidebar fixed top-0 left-0 bg-[#fff] w-[18%] h-full border-r border-[rgba(90,0,0,0.10)] py-2 px-4">
