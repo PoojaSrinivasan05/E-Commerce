@@ -13,7 +13,9 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegTrashAlt } from "react-icons/fa";
 import Tooltip from "@mui/material/Tooltip";
 import Pagination from "@mui/material/Pagination";
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -84,7 +86,7 @@ const Dashboard = () => {
 
   const[categoryFilterVal,setcategoryFilterVal]= React.useState('');
   
-   const handleChange = (event) => {
+   const handleChangeCatFilter = (event) => {
     setcategoryFilterVal(event.target.value);
   };
 
@@ -133,11 +135,37 @@ const Dashboard = () => {
           </h2>
         </div>
 
-        <div className="flex items-center w-full pl-5">
-            <div className="col w-[25%]">
-              <h4 className=" font-[600] text-[13px]">Category</h4>
+  
+
+
+        <div className="flex items-center w-full pl-5 justify-between pr-5">
+            <div className="col w-[20%]">
+              <h4 className=" font-[600] text-[13px] mb-2">Category By</h4>
+              
+         <Select
+         className="w-full"
+         size="small"
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={categoryFilterVal}
+          onChange={handleChangeCatFilter}
+          label="Category"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Men</MenuItem>
+          <MenuItem value={20}>Women</MenuItem>
+          <MenuItem value={30}>Kids</MenuItem>
+        </Select>
+            </div>
+            <div className="col w-[25%] ml-auto flex items-center gap-3">
+              <Button className="btn !bg-green-600 btn-sm !text-white flex items-center">Export</Button>
+              <Button className="btn-blue  !text-white btn-sm">Add Product</Button>
             </div>
           </div>
+
+          <br />
 
         <div class="relative overflow-x-auto mt-5 pb-5">
           <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -540,6 +568,34 @@ const Dashboard = () => {
             <span className="font-[400] text-[12px]"> (Material UI Table)</span>
           </h2>
         </div>
+        <div className="flex items-center w-full pl-5 justify-between pr-5">
+            <div className="col w-[20%]">
+              <h4 className=" font-[600] text-[13px] mb-2">Category By</h4>
+              
+         <Select
+         className="w-full"
+         size="small"
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={categoryFilterVal}
+          onChange={handleChangeCatFilter}
+          label="Category"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Men</MenuItem>
+          <MenuItem value={20}>Women</MenuItem>
+          <MenuItem value={30}>Kids</MenuItem>
+        </Select>
+            </div>
+            <div className="col w-[25%] ml-auto flex items-center gap-3">
+              <Button className="btn !bg-green-600 btn-sm !text-white flex items-center">Export</Button>
+              <Button className="btn-blue  !text-white btn-sm">Add Product</Button>
+            </div>
+          </div>
+
+          <br />
 
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">

@@ -8,7 +8,10 @@ body{font-family: "Playfair Display", serif;background: #f1f1f1;}
 ::-webkit-scrollbar{width:10px !important; height: 10px m !important;} 
 ::-webkit-scrollbar-thumb{background: #ccc !important;}
 
-.btn-blue{background: #153c96; color: #000000 !important; padding: 8px 20px;}
+.btn{padding: 8px 20px !important;}
+.btn svg{font-size:20px; !important}
+.btn-blue{background: #3a69d8 !important; color: #f1f1f1 !important; }
 .btn-blue:hover{background: #3067e5 !important;}
+.btn-sm{padding:6px 20px !important; font-size:13px  !important}
 
 th.MuiTabel.Cell-root{@apply bg-[#f1f1f1] py-1}
