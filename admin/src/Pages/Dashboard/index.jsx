@@ -13,6 +13,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegTrashAlt } from "react-icons/fa";
 import Tooltip from "@mui/material/Tooltip";
 import Pagination from "@mui/material/Pagination";
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -63,13 +64,6 @@ const rows = [
   createData("Australia", "AU", 25475400, 7692024),
   createData("Germany", "DE", 83019200, 357578),
   createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
 ];
 
 const Dashboard = () => {
@@ -88,7 +82,13 @@ const Dashboard = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const handleChangePage = (event, newPage) => {
+  const[categoryFilterVal,setcategoryFilterVal]= React.useState('');
+  
+   const handleChange = (event) => {
+    setcategoryFilterVal(event.target.value);
+  };
+
+  const handleChangePage = (event,newPage) => {
     setPage(newPage);
   };
 
@@ -128,11 +128,16 @@ const Dashboard = () => {
           <h2 className="text-[18px] font-[600]">
             Products
             <span className="font-[400] text-[12px]">
-              {" "}
               (Tailwind CSS Table)
             </span>
           </h2>
         </div>
+
+        <div className="flex items-center w-full pl-5">
+            <div className="col w-[25%]">
+              <h4 className=" font-[600] text-[13px]">Category</h4>
+            </div>
+          </div>
 
         <div class="relative overflow-x-auto mt-5 pb-5">
           <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -538,12 +543,12 @@ const Dashboard = () => {
 
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
-            <TableHead >
+            <TableHead>
               <TableRow>
                 <TableCell>
-                <Checkbox {...label} size="small" /> 
+                  <Checkbox {...label} size="small" />
                 </TableCell>
-                
+
                 {columns.map((column) => (
                   <TableCell
                     key={column.id}
@@ -580,7 +585,7 @@ const Dashboard = () => {
                       </h3>
                       <span className="text-[12px]">Wooden Chair</span>
                     </div>
-                    </div>
+                  </div>
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
                   Furniture
@@ -589,7 +594,7 @@ const Dashboard = () => {
                   seater
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
-                   <div className="flex  gap-1 flex-col">
+                  <div className="flex  gap-1 flex-col">
                     <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
                       ₹900
                     </span>
@@ -599,7 +604,7 @@ const Dashboard = () => {
                   </div>
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
-                   <p className="text-[14px] w-[100px]">
+                  <p className="text-[14px] w-[100px]">
                     <span className="font-[600]">554 </span>sale
                   </p>
                   <Progress value={40} type="success" />
@@ -649,7 +654,7 @@ const Dashboard = () => {
                       </h3>
                       <span className="text-[12px]">Wooden Chair</span>
                     </div>
-                    </div>
+                  </div>
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
                   Furniture
@@ -658,7 +663,7 @@ const Dashboard = () => {
                   seater
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
-                   <div className="flex  gap-1 flex-col">
+                  <div className="flex  gap-1 flex-col">
                     <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
                       ₹900
                     </span>
@@ -668,7 +673,7 @@ const Dashboard = () => {
                   </div>
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
-                   <p className="text-[14px] w-[100px]">
+                  <p className="text-[14px] w-[100px]">
                     <span className="font-[600]">554 </span>sale
                   </p>
                   <Progress value={40} type="success" />
@@ -718,7 +723,7 @@ const Dashboard = () => {
                       </h3>
                       <span className="text-[12px]">Wooden Chair</span>
                     </div>
-                    </div>
+                  </div>
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
                   Furniture
@@ -727,7 +732,7 @@ const Dashboard = () => {
                   seater
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
-                   <div className="flex  gap-1 flex-col">
+                  <div className="flex  gap-1 flex-col">
                     <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
                       ₹900
                     </span>
@@ -737,7 +742,7 @@ const Dashboard = () => {
                   </div>
                 </TableCell>
                 <TableCell style={{ minWidth: columns.minWidth }}>
-                   <p className="text-[14px] w-[100px]">
+                  <p className="text-[14px] w-[100px]">
                     <span className="font-[600]">554 </span>sale
                   </p>
                   <Progress value={40} type="success" />
@@ -762,15 +767,13 @@ const Dashboard = () => {
                   </div>
                 </TableCell>
               </TableRow>
-
-              
             </TableBody>
           </Table>
         </TableContainer>
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={rows.length}
+          count={10}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

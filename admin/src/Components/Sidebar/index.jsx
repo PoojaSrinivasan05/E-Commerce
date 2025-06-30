@@ -22,7 +22,7 @@ const Sidebar = () => {
  const context = useContext(MyContext);
 
   return (
-    <div className="sidebar fixed top-0 left-0 bg-[#fff] w-[18%] h-full border-r border-[rgba(90,0,0,0.10)] py-2 px-4">
+    <div className={`sidebar fixed top-0 left-0 bg-[#fff]  h-full border-r border-[rgba(90,0,0,0.10)] py-2 px-4 w-[${context.isSidebarOpen=== true ? '18%' : '0%'}]`}>
       <div className="py-2 w-full">
         <Link to="/">
           <img
