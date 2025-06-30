@@ -9,7 +9,7 @@ const MyContext = createContext();
 
 function App(){
 
-  const[isSidebarOpen,setIsSidebarOpen]=useState(true);
+  const[isSidebarOpen,setisSidebarOpen]=useState(true);
 
 
   const  router=createBrowserRouter([
@@ -21,7 +21,7 @@ function App(){
         <section className="main">
           <Header />
           <div className="contentMain flex">
-            <div className={` overflow-hidden sidebarWrapper ${ isSidebarOpen=== true? 'w-[18%]':'w-[0px] opacity-0'} transition-all`}>
+            <div className={`overflow-hidden sidebarWrapper ${ isSidebarOpen=== true? 'w-[18%]':'w-[0px] opacity-0'} transition-all`}>
               <Sidebar />
             </div>
             <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all}`}>
@@ -36,7 +36,7 @@ function App(){
 
   const values={
     isSidebarOpen,
-    setIsSidebarOpen,
+    setisSidebarOpen,
   }
 
   return(

@@ -34,14 +34,20 @@ const Header = () => {
 
   const context = useContext(MyContext);
 
-  return (
-    <header className={`w-full h-[auto]  shadow-md py-2 ${context.isSidebarOpen===true ? 'pl-64' :'pl-5'} pr-7 bg-[#fff] tansition-all  flex items-center justify-between`}>
-      <div className="part1">
-        <Button className="!w-[40px] h-[50px] !rounded-full !min-w-[40px] text-[rgba(0,0,0,0.8)]" onClick={() =>context.setIsSidebarOpen(!context.isSidebarOpen)}
-        >
-          <RiMenu2Fill className="text-[18px] text-[rgba(0,0,0,0.8)]" />
-        </Button>
-      </div>
+   return (
+  <header
+    className={`w-full h-auto shadow-md py-2 ${
+      context.isSidebarOpen===true ? 'pl-64' : 'pl-5'
+    } pr-7 bg-[#fff] transition-all duration-300 flex items-center justify-between`}
+  >
+    <div className="part1">
+      <Button
+        className="!w-[40px] h-[50px] !rounded-full !min-w-[40px] text-[rgba(0,0,0,0.8)]"
+        onClick={() => context.setisSidebarOpen(!context.isSidebarOpen)}
+      >
+        <RiMenu2Fill className="text-[18px] text-[rgba(0,0,0,0.8)]" />
+      </Button>
+    </div>
 
       <div className="part2 w-[40%] flex items-center justify-end gap-5">
         <IconButton aria-label="cart">
