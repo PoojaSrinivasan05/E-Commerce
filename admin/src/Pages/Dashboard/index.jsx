@@ -83,8 +83,51 @@ const Dashboard = () => {
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
   const[categoryFilterVal,setcategoryFilterVal]= React.useState('');
+  const[chart1Data,setChart1Data]=useState([
+  {
+    name: 'JAN',
+    TotalUsers: 4000,
+    TotalSales: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'FEB',
+    TotalUsers: 3000,
+    TotalSales: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'MAR',
+    TotalUsers: 2000,
+    TotalSales: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'APR',
+    TotalUsers: 2780,
+    TotalSales: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'MAY',
+    TotalUsers: 1890,
+    TotalSales: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'JUN',
+    TotalUsers: 2390,
+    TotalSales: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'JUL',
+    TotalUsers: 3490,
+    TotalSales: 4300,
+    amt: 2100,
+  },
+]);
   
    const handleChangeCatFilter = (event) => {
     setcategoryFilterVal(event.target.value);
@@ -99,50 +142,6 @@ const Dashboard = () => {
     setPage(0);
   };
 
-  const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
 
   return (
     <>
@@ -1186,6 +1185,44 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
+      <div className="card my-4 shadow-md sm:rounded-lg bg-white">
+        <div className="flex items-center justify-between px-5 py-5">
+          <h2 className="text-[18px] font-[600]">Total Users & Total Sales</h2>
+        </div>
+
+        <div  className="flex items-center gap-5 px-5 py-5 pt-1">
+          <span className="block w-[8px] h-[8px] rounded-full bg-green-600"></span>
+          Total Users
+        
+
+         <span  className="flex items-center gap-1 text-[15px]">
+          <span className="block w-[8px] h-[8px] rounded-full bg-primary"></span>
+          </span>
+          Total Sales
+        </div>
+       
+        <LineChart
+          width={1000}
+          height={500}
+          data={chart1Data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke="none" />
+          <XAxis dataKey="name"tick={{fontSize:12}} />
+          <YAxis tick={{fontSize:12}} />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="TotalSales" stroke="#8884d8" strokeWidth={3} activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="TotalUsers" stroke="#82ca9d"  strokeWidth={3} />
+         
+        </LineChart>
+      </div>
+
     </>
   );
 };

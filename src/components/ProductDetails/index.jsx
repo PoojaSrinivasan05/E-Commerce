@@ -6,10 +6,6 @@ import { FaHeartCirclePlus } from "react-icons/fa6";
 import { Button } from "@mui/material";
 
 
-
-
-
-
 export const ProductDetailsComponent=()=>{
 
 
