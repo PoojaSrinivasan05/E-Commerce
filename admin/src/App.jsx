@@ -4,13 +4,15 @@ import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Dashboard from "./Pages/Dashboard";
 import {createContext ,useState} from "react";
+import  Login from "./Pages/Login";
 
 const MyContext = createContext();
 
-function App(){
+function App()
+{
 
   const[isSidebarOpen,setisSidebarOpen]=useState(true);
-
+const[isLogin,setIsLogin]=useState(false);
 
   const  router=createBrowserRouter([
     {
@@ -25,20 +27,28 @@ function App(){
               <Sidebar />
             </div>
             <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all}`}>
-              <Dashboard />
-            </div>
-          </div>
-          </section>
-          </>
-       
-
-      )
+              <Dashboard/>
+              </div>
+              </div>
+              </section>
+            </>
+      ),
+    },
+    {
+       path:"/login",
+      exact:true,
+      element:(
+        <>
+        <Login />
+        </>
+      ),
     }
-  ])
-
+  ]);
   const values={
     isSidebarOpen,
     setisSidebarOpen,
+    isLogin,
+    setIsLogin
   }
 
   return(

@@ -27,7 +27,7 @@ const Sidebar = () => {
         <Link to="/">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-dSW7A8nZ_ooSljbkGh_A07fWwuJlWV3FQ&s"
-            className="w-[120px] p-4"
+            className="w-[100px] p-4"
             alt="Logo"
           />
         </Link>

@@ -19,7 +19,7 @@ const DashboardBoxes =()=>{
         className="dashboardBoxesSlider"
       >
         <SwiperSlide>
-          <div className="box p-5 cursor-auto hover:bg-[#fafafa] roundeed-md border border-[rgba(0,0,0,0.1)] flex items-center gap-4">
+          <div className="box p-5 cursor-auto  hover:bg-[#fafafa] roundeed-md border border-[rgba(0,0,0,0.1)]  flex items-center gap-4">
             <FiGift className="text-[30px] text-[#3872fa]" />
             <div className="info w-[70%]">
                 <h3>New Orders</h3>
