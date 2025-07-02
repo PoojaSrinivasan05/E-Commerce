@@ -13,8 +13,11 @@ body{font-family: "Playfair Display", serif;background: #f1f1f1;}
 .btn-blue{background: #3a69d8 !important; color: #f1f1f1 !important; }
 .btn-blue:hover{background: #3067e5 !important;}
 .btn-sm{padding:6px 20px !important; font-size:13px  !important}
+.btn-lg{padding:6px 20px !important; font-size:16px  !important}
 
 th.MuiTabel.Cell-root{@apply bg-[#f1f1f1] py-1}
 
 a.active button{background: #dcdcdc !important;}
-.MuiButton-icon svg{font-size:25px !important}
+.MuiButton-icon svg{font-size:27px !important;}
+
+.css-rizt0-MuiTypography-root{font-size:14px !important;}

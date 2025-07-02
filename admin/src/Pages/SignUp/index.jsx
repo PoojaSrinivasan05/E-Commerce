@@ -6,12 +6,11 @@ import { NavLink } from "react-router-dom";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
+
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-const Login = () => {
+const SignUp = () => {
   const [loadingGoogle, setLoadingGoogle] = useState(false);
   const [loadingFb, setLoadingFb] = useState(false);
 
@@ -39,12 +38,12 @@ const Login = () => {
               Login
             </Button>
           </NavLink>
-           <NavLink to="/sign-up" exact={true} activeclassName="isActive">
-                    <Button className="!rounded-full !text-[rbga(0,0,0,0.8)] flex gap-1 !px-5">
-                      <MdOutlineLogin className="text-[15px]" />
-                      Sign Up
-                    </Button>
-                    </NavLink>
+          <NavLink to="/sign-up" exact={true} activeclassName="isActive">
+          <Button className="!rounded-full !text-[rbga(0,0,0,0.8)] flex gap-1 !px-5">
+            <MdOutlineLogin className="text-[15px]" />
+            Sign Up
+          </Button>
+          </NavLink>
         </div>
       </header>
       <img src="/Pattern.jpg" className="w-full fixed top-0 left-0 opacity-5" />
@@ -55,8 +54,7 @@ const Login = () => {
         </div>
 
         <h1 className="text-center text-[35px] font-[800] mt-4">
-          Welcome Back! <br />
-          Sign in with your credentials.
+          Join us today! Get special  <br/> benefits and stay up-to-date
         </h1>
 
         <div className="flex  items-center justify-center w-full mt-5 gap-4">
@@ -95,6 +93,13 @@ const Login = () => {
         </div>
 
         <form>
+            <div className="form-group mb-4 w-full">
+            <h4 className="text-[14px] font-[500] mb-1">Full Name</h4>
+            <input
+              type="text"
+              className="w-full h-[50px] border-2 border-[rgba(0,0,0,0.1)] rounded-md focus:border-[rgba(0,0,0,0.7)] focus:outline-none px-3"
+            />
+          </div>
           <div className="form-group mb-4 w-full">
             <h4 className="text-[14px] font-[500] mb-1">Email</h4>
             <input
@@ -123,10 +128,7 @@ const Login = () => {
           </div>
 
           <div className="form-group justify-between  flex items-center mb-4 w-full">
-            <FormControlLabel
-              control={<Checkbox defaultChecked />}
-              label="Remember Me"
-            />
+            
             <Link
               to="/forgot-password"
               className="text-primary font-[700] hover:text-gray-700 hover:underline text-[15px]"
@@ -135,11 +137,11 @@ const Login = () => {
             </Link>
           </div>
 
-          <Button className="btn-blue btn-lg w-full">Sign In</Button>
+          <Button className="btn-blue btn-lg w-full">Sign Up</Button>
         </form>
       </div>
     </section>
   );
 };
 
-export default Login;
+export default SignUp;

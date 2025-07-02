@@ -5,6 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import Dashboard from "./Pages/Dashboard";
 import {createContext ,useState} from "react";
 import  Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 
 const MyContext = createContext();
 
@@ -40,6 +41,15 @@ const[isLogin,setIsLogin]=useState(false);
       element:(
         <>
         <Login />
+        </>
+      ),
+    },
+    {
+       path:"/sign-up",
+      exact:true,
+      element:(
+        <>
+        <SignUp />
         </>
       ),
     }
