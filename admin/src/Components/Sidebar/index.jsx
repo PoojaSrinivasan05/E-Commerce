@@ -26,8 +26,8 @@ const Sidebar = () => {
       <div className="py-2 w-full">
         <Link to="/">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-dSW7A8nZ_ooSljbkGh_A07fWwuJlWV3FQ&s"
-            className="w-[100px] p-4"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmosGiyoJTAk23s6_jNwNro6jiFiVigUTJNw&s"
+            className="w-[150px] p-4"
             alt="Logo"
           />
         </Link>
