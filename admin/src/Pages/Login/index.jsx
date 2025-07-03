@@ -110,8 +110,7 @@ const Login = () => {
                 type={isPasswordShow=== false ? 'password':'text'}
                 className="w-full h-[50px] border-2 border-[rgba(0,0,0,0.1)] rounded-md focus:border-[rgba(0,0,0,0.7)] focus:outline-none px-3"
               />
-              <Button className="!absolute top-[7px] right-[10px] z-50 !w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-gray-600" onClick={()=>setisPasswordShow
-                (!isPasswordShow)}>
+              <Button className="!absolute top-[7px] right-[10px] z-50 !w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-gray-600" onClick={()=>setisPasswordShow(!isPasswordShow)}>
                 {
                   isPasswordShow === false ?  (<FaEyeSlash className="text-[16px]" />) : (
                      <FaEye className="text-[16px]" />

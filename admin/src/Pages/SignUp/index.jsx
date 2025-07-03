@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
@@ -115,8 +117,7 @@ const SignUp = () => {
                 type={isPasswordShow=== false ? 'password':'text'}
                 className="w-full h-[50px] border-2 border-[rgba(0,0,0,0.1)] rounded-md focus:border-[rgba(0,0,0,0.7)] focus:outline-none px-3"
               />
-              <Button className="!absolute top-[7px] right-[10px] z-50 !w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-gray-600" onClick={()=>setisPasswordShow
-                (!isPasswordShow)}>
+              <Button className="!absolute top-[7px] right-[10px] z-50 !w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-gray-600" onClick={()=>setisPasswordShow(!isPasswordShow)}>
                 {
                   isPasswordShow === false ?  (<FaEyeSlash className="text-[16px]" />) : (
                      <FaEye className="text-[16px]" />
@@ -128,7 +129,10 @@ const SignUp = () => {
           </div>
 
           <div className="form-group justify-between  flex items-center mb-4 w-full">
-            
+            <FormControlLabel
+                          control={<Checkbox defaultChecked />}
+                          label="Remember Me"
+                        />
             <Link
               to="/forgot-password"
               className="text-primary font-[700] hover:text-gray-700 hover:underline text-[15px]"
