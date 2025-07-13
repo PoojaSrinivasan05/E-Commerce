@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import { Button } from "@mui/material";
-import { IoMdAdd } from "react-icons/io";
 import Checkbox from "@mui/material/Checkbox";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -19,6 +18,9 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import SearchBox from "../../Components/SearchBox";
 import { useContext } from "react";
+import { MyContext } from "../../App"; 
+
+
 
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -54,8 +56,8 @@ export const Products=()=>{
       const[categoryFilterVal,setcategoryFilterVal]= useState('');
       const [rowsPerPage, setRowsPerPage] = React.useState(10);
       const [page, setPage] = React.useState(0);
-      const context =useContext;
 
+           const context = useContext(MyContext);
        const handleChangeCatFilter = (event) => {
     setcategoryFilterVal(event.target.value);
   };
@@ -76,7 +78,10 @@ export const Products=()=>{
                    </h2>
                     <div className="col w-[25%] ml-auto flex items-center justify-end gap-3">
                        <Button className="btn !bg-green-600 btn-sm !text-white flex items-center">Export</Button>
-                       <Button className="btn-blue  !text-white btn-sm">Add Product</Button>
+                       <Button className="btn-blue  !text-white btn-sm" onClick ={()=>context.setIsOpenFullScreenPanel({
+                        open:true,
+                        model:'Add Product'
+                       })}>Add Product</Button>
                      </div>
                  </div>
 
