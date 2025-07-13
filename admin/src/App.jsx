@@ -9,6 +9,8 @@ import  Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import Products from "./Pages/Products";
 import AddProduct from "./Pages/Products/addProduct";
+import CategoryList from "./Pages/Category";
+import SubCategoryList from "./Pages/Category/subCatList";
 
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
@@ -17,6 +19,12 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { IoClose } from "react-icons/io5";
 import Slide from '@mui/material/Slide';
+import HomeSliderBanners from "./Pages/HomeSliderBanners";
+import AddHomeSlide from "./Pages/HomeSliderBanners/addHomeSlide";
+import AddCategory from "./Pages/Category/addCategory";
+import AddSubCategory from "./Pages/Category/addSubCategory ";
+import Users from "./Pages/Users/index ";
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -91,8 +99,8 @@ const [isOpenFullScreenPanel,setIsOpenFullScreenPanel] = useState({
             </>
       ),
     },
-    {
-      path:"/addproduct",
+     {
+      path:"/homeSlider/list",
       exact:true,
       element:(
         <>
@@ -103,13 +111,72 @@ const [isOpenFullScreenPanel,setIsOpenFullScreenPanel] = useState({
               <Sidebar />
             </div>
             <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all`}>
-              <AddProduct/>
+              <HomeSliderBanners/>
               </div>
               </div>
               </section>
             </>
       ),
     },
+     {
+      path:"/category/list",
+      exact:true,
+      element:(
+        <>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div className={`overflow-hidden sidebarWrapper ${ isSidebarOpen=== true? 'w-[18%]':'w-[0px] opacity-0'} transition-all`}>
+              <Sidebar />
+            </div>
+            <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all`}>
+              <CategoryList/>
+              </div>
+              </div>
+              </section>
+            </>
+      ),
+    },
+     {
+      path:"/subCategory/list",
+      exact:true,
+      element:(
+        <>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div className={`overflow-hidden sidebarWrapper ${ isSidebarOpen=== true? 'w-[18%]':'w-[0px] opacity-0'} transition-all`}>
+              <Sidebar />
+            </div>
+            <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all`}>
+              <SubCategoryList/>
+              </div>
+              </div>
+              </section>
+            </>
+      ),
+    },
+     {
+      path:"/users",
+      exact:true,
+      element:(
+        <>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div className={`overflow-hidden sidebarWrapper ${ isSidebarOpen=== true? 'w-[18%]':'w-[0px] opacity-0'} transition-all`}>
+              <Sidebar />
+            </div>
+            <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all`}>
+              <Users/>
+              </div>
+              </div>
+              </section>
+            </>
+      ),
+    },
+
+
    
     
     
@@ -162,6 +229,16 @@ const [isOpenFullScreenPanel,setIsOpenFullScreenPanel] = useState({
      
                        {
                         isOpenFullScreenPanel ?.model === "Add Product" && <AddProduct /> 
+                       }
+
+                        {
+                        isOpenFullScreenPanel ?.model === "Add Home Slide" && <AddHomeSlide /> 
+                       }
+                       {
+                        isOpenFullScreenPanel ?.model === "Add  New Category" && <AddCategory /> 
+                       }
+                       {
+                        isOpenFullScreenPanel ?.model === "Add  New Sub Category" && <AddSubCategory /> 
                        }
       </Dialog>
     </MyContext.Provider>

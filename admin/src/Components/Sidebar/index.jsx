@@ -105,11 +105,12 @@ const Sidebar = () => {
                 </Link>
               </li>
                <li className="w-full">
-                 <Link to="/products/upload">
-                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
-                   <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)] "> </span>Product Upload
+                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3" onClick={()=>context.setIsOpenFullScreenPanel({
+                    open:true,
+                    model:"Add Product"
+                   })}>
+                   <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)]" > </span>Product Upload
                 </Button>
-                </Link>
                 
               </li>
             </ul>
@@ -133,32 +134,41 @@ const Sidebar = () => {
           <Collapse isOpened={submenuIndex === 4}>
             <ul className="w-full ">
               <li className="w-full">
-                <Link to="/Categories">
+                <Link to="/Category/list">
                 <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex  gap-3">
                 <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)] "> </span>Category List
                 </Button>
                 </Link>
               </li>
                <li className="w-full">
-                <Link to="/Category/add">
-                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
+            
+                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3"  onClick ={()=>context.setIsOpenFullScreenPanel({
+                                        open:true,
+                                        model:'Add  New Category'
+                                       })}>
                    <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)] "> </span>Add  Category
                 </Button>
-                </Link>
+         
               </li>
                <li className="w-full">
                 <Link to="/Category/subCat">
-                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
+                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3"  onClick ={()=>context.setIsOpenFullScreenPanel({
+                                        open:true,
+                                        model:'Add  New Category'
+                                       })}>
                    <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)] "> </span>Sub Category List
                 </Button>
                 </Link>
               </li>
                <li className="w-full">
-                <Link to="/Category/subCat/add">
-                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
+             
+                <Button className="!text-[rgba(0,0,0,0.7)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3" onClick ={()=>context.setIsOpenFullScreenPanel({
+                        open:true,
+                        model:'Add  New Sub Category'
+                       })}>
                    <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)] "> </span>Add Sub Category
                 </Button>
-                </Link>
+           
               </li>
             </ul>
           </Collapse>
