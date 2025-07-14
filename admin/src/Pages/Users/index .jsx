@@ -1,14 +1,8 @@
 import React,{useState} from "react";
-import { Button } from "@mui/material";
+import { FaPhone } from "react-icons/fa6";
 import Checkbox from "@mui/material/Checkbox";
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
-import Progress from "../../Components/ProgressBar";
-import { AiOutlineEdit } from "react-icons/ai";
-import { FaRegEye } from "react-icons/fa6";
-import { FaRegTrashAlt } from "react-icons/fa";
-import Tooltip from "@mui/material/Tooltip";
+import { MdOutlineMarkEmailRead } from "react-icons/md";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -27,40 +21,29 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 
 const columns = [
-  { id: "product", label: "PRODUCT", minWidth: 150 },
-  { id: "category", label: "CATEGORY", minWidth: 100 },
+  { id: "userImg", label: "USER IMAGE", minWidth: 80 },
+  { id: "userName", label: "USER NAME", minWidth: 100 },
   {
-    id: "subcategory",
-    label: "SUB CATEGORY",
+    id: "userEmail",
+    label: "USER EMAIL",
     minWidth: 170,
   },
   {
-    id: "price",
-    label: "PRICE",
+    id: "userPh",
+    label: "USER PHONE NO",
     minWidth: 130,
   },
-  {
-    id: "sales",
-    label: "SALES",
-    minWidth: 100,
-  },
-  {
-    id: "action",
-    label: "ACTION",
-    minWidth: 120,
-  },
+
 ];
 
 export const Users=()=>{
 
-      const[categoryFilterVal,setcategoryFilterVal]= useState('');
+    
       const [rowsPerPage, setRowsPerPage] = React.useState(10);
       const [page, setPage] = React.useState(0);
 
            const context = useContext(MyContext);
-       const handleChangeCatFilter = (event) => {
-    setcategoryFilterVal(event.target.value);
-  };
+    
 
   const handleChangePage = (event,newPage) => {
     setPage(newPage);
@@ -121,479 +104,24 @@ export const Users=()=>{
                              <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
                                <Link to="/product/45745">
                                  <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
+                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBSXlY1UTgcbqbMqbQMv5FJ2ZTL5dcFeZA2g&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
                                    className="w-full group-hover:scale-105 transition-all"
                                  />
                                </Link>
                              </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
+                             
                            </div>
                          </TableCell>
                          <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
+                           Amera
                          </TableCell>
                          <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
+                           <span className="flex items-center gap-2"><MdOutlineMarkEmailRead/>amera@123gmail.com</span>
                          </TableCell>
                          <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
+                           <span className="flex items-center gap-2"><FaPhone/>6794857689</span>
                          </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-         
-                       <TableRow>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-4 w-[300px]">
-                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                             </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-         
-                       <TableRow>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-4 w-[300px]">
-                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                             </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-                        <TableRow>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-4 w-[300px]">
-                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                             </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-         
-                       <TableRow>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-4 w-[300px]">
-                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                             </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-                        <TableRow>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-4 w-[300px]">
-                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                             </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-         
-                       <TableRow>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-4 w-[300px]">
-                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                             </div>
-                             <div className="info w-[75%]">
-                               <h3 className="font-[600] text-[12px] leading-4 hover:text-primary">
-                                 <a to="/product/45745" data-discover="true">
-                                   Photo booth anim 8-bit hella, PBR 3 wolf moon beard
-                                   Helvetica. Salvia esse nihil, flexitarian Truffaut
-                                   synth art party deep v chillwave.
-                                 </a>
-                               </h3>
-                               <span className="text-[12px]">Wooden Chair</span>
-                             </div>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           Furniture
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           seater
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex  gap-1 flex-col">
-                             <span className="oldPrice line-through leading-3 text-gray-500 text-[14px] font-[500]">
-                               ₹900
-                             </span>
-                             <span className="price text-primary font-bold text-[13px]">
-                               ₹600
-                             </span>
-                           </div>
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <p className="text-[14px] w-[100px]">
-                             <span className="font-[600]">554 </span>sale
-                           </p>
-                           <Progress value={40} type="success" />
-                         </TableCell>
-                         <TableCell style={{ minWidth: columns.minWidth }}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
+                     </TableRow>
                      </TableBody>
                    </Table>
                  </TableContainer>

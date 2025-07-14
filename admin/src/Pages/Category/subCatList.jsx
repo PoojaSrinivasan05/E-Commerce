@@ -25,7 +25,7 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const columns = [
   { id: "image", label: "CATEGORY IMAGE", minWidth: 250 },
-  { id: "catName", label: "CATEGORY IMAGE", minWidth: 250 },
+  { id: "catName", label: "CATEGORY NAME", minWidth: 250 },
   { id: "subCatName", label: "SUB CATEGORY IMAGE", minWidth: 400 },
   { id: "action", label: "ACTION", minWidth: 100 }
 ];
@@ -52,7 +52,7 @@ export const SubCategoryList=()=>{
         <>
          <div className="flex items-center justify-between px-2 py-2 mt-3">
                    <h2 className="text-[18px] font-[600]">
-                     Category List
+                     Sub Category List
                      <span className="font-[400] text-[12px]"> (Material UI Table)</span>
                    </h2>
                     <div className="col w-[30%] ml-auto flex items-center justify-end gap-3">

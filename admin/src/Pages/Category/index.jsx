@@ -27,7 +27,8 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 
 const columns = [
-  { id: "image", label: "IMAGE", minWidth: 250 },
+  { id: "image", label: "IMAGE", minWidth: 150 },
+  { id: "catName", label: "CATEGORY NAME", minWidth: 150 },
   { id: "action", label: "ACTION", minWidth: 100 }
 ];
 
@@ -91,235 +92,50 @@ export const CategoryList=()=>{
                        </TableRow>
                      </TableHead>
                      <TableBody>
-                       <TableRow>
-                         <TableCell>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-4 w-[80px]">
-                             <div className="img w-full rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                               </div>
-                           </div>
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-
-                        <TableRow>
-                         <TableCell>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-4 w-[80px]">
-                             <div className="img w-full rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                               </div>
-                           </div>
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-
-                        <TableRow>
-                         <TableCell>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-4 w-[80px]">
-                             <div className="img w-full rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                               </div>
-                           </div>
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-
-                        <TableRow>
-                         <TableCell>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-4 w-[80px]">
-                             <div className="img w-full rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                               </div>
-                           </div>
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-                        <TableRow>
-                         <TableCell>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-4 w-[80px]">
-                             <div className="img w-full rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                               </div>
-                           </div>
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-
-
-                        <TableRow>
-                         <TableCell>
-                           <Checkbox {...label} size="small" />
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-4 w-[80px]">
-                             <div className="img w-full rounded-md overflow-hidden group">
-                               <Link to="/product/45745">
-                                 <img
-                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
-                                   className="w-full group-hover:scale-105 transition-all"
-                                 />
-                               </Link>
-                               </div>
-                           </div>
-                         </TableCell>
-                         <TableCell width={100}>
-                           <div className="flex items-center gap-1 ">
-                             <Tooltip title="Edit Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="View Product Details" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
-                               </Button>
-                             </Tooltip>
-                             <Tooltip title="Delete Product" placement="top-start">
-                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
-                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
-                               </Button>
-                             </Tooltip>
-                           </div>
-                         </TableCell>
-                       </TableRow>
-         
                       
-         
-                   
+
+
+                        <TableRow>
+                         <TableCell>
+                           <Checkbox {...label} size="small" />
+                         </TableCell>
+                         <TableCell width={100}>
+                           <div className="flex items-center gap-4 w-[80px]">
+                             <div className="img w-full rounded-md overflow-hidden group">
+                               <Link to="/product/45745">
+                                 <img
+                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLrFC9dsJ4q660AkKdaei8DTWUDEm7RwjSg&s"
+                                   className="w-full group-hover:scale-105 transition-all"
+                                 />
+                               </Link>
+                               </div>
+                           </div>
+                         </TableCell>
+                         <TableCell width={100}>
+                          Fashion
+                         </TableCell>
+                         <TableCell width={100}>
+                           <div className="flex items-center gap-1 ">
+                             <Tooltip title="Edit Product" placement="top-start">
+                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
+                                 <AiOutlineEdit className="text-[rgba(0,0,0,0.7)] text-[20px]" />
+                               </Button>
+                             </Tooltip>
+                             <Tooltip title="View Product Details" placement="top-start">
+                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
+                                 <FaRegEye className="text-[rgba(0,0,0,0.7)] text-[20px]" />
+                               </Button>
+                             </Tooltip>
+                             <Tooltip title="Delete Product" placement="top-start">
+                               <Button className="!w-[35px] !h-[35px]  !border !border-[rgba(0,0,0,0.4)] bg-[#f1f1f1] !rounded-full hover:!bg-[#f1f1f1] !min-w-[35px]">
+                                 <FaRegTrashAlt className="text-[rgba(0,0,0,0.7)] text-[18px]" />
+                               </Button>
+                             </Tooltip>
+                           </div>
+                         </TableCell>
+                       </TableRow>
+
+
                      </TableBody>
                    </Table>
                  </TableContainer>

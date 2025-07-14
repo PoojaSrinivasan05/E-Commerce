@@ -24,6 +24,7 @@ import AddHomeSlide from "./Pages/HomeSliderBanners/addHomeSlide";
 import AddCategory from "./Pages/Category/addCategory";
 import AddSubCategory from "./Pages/Category/addSubCategory ";
 import Users from "./Pages/Users/index ";
+import Orders from "./Pages/Orders";
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -169,6 +170,25 @@ const [isOpenFullScreenPanel,setIsOpenFullScreenPanel] = useState({
             </div>
             <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all`}>
               <Users/>
+              </div>
+              </div>
+              </section>
+            </>
+      ),
+    },
+      {
+      path:"/orders",
+      exact:true,
+      element:(
+        <>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div className={`overflow-hidden sidebarWrapper ${ isSidebarOpen=== true? 'w-[18%]':'w-[0px] opacity-0'} transition-all`}>
+              <Sidebar />
+            </div>
+            <div className={`contentRight py-4 px-5 ${ isSidebarOpen=== false ? 'w-[100%]': 'w-[82%]'} transition-all`}>
+              <Orders/>
               </div>
               </div>
               </section>
