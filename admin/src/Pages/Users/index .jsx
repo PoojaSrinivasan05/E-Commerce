@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ import TableRow from "@mui/material/TableRow";
 import SearchBox from "../../Components/SearchBox";
 import { useContext } from "react";
 import { MyContext } from "../../App"; 
+import { BsCalendarDate } from "react-icons/bs";
 
 
 
@@ -31,6 +32,11 @@ const columns = [
   {
     id: "userPh",
     label: "USER PHONE NO",
+    minWidth: 130,
+  },
+  {
+    id: "createdDate",
+    label: "CREATED",
     minWidth: 130,
   },
 
@@ -121,6 +127,106 @@ export const Users=()=>{
                          <TableCell style={{ minWidth: columns.minWidth }}>
                            <span className="flex items-center gap-2"><FaPhone/>6794857689</span>
                          </TableCell>
+                          <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><BsCalendarDate/>24-4-24</span>
+                         </TableCell>
+                         
+                     </TableRow>
+
+                       <TableRow>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <Checkbox {...label} size="small" />
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <div className="flex items-center gap-4 w-[300px]">
+                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
+                               <Link to="/product/45745">
+                                 <img
+                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBSXlY1UTgcbqbMqbQMv5FJ2ZTL5dcFeZA2g&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
+                                   className="w-full group-hover:scale-105 transition-all"
+                                 />
+                               </Link>
+                             </div>
+                             
+                           </div>
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           Amera
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><MdOutlineMarkEmailRead/>amera@123gmail.com</span>
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><FaPhone/>6794857689</span>
+                         </TableCell>
+                          <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><BsCalendarDate/>24-4-24</span>
+                         </TableCell>
+                         
+                     </TableRow>
+
+                       <TableRow>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <Checkbox {...label} size="small" />
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <div className="flex items-center gap-4 w-[300px]">
+                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
+                               <Link to="/product/45745">
+                                 <img
+                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBSXlY1UTgcbqbMqbQMv5FJ2ZTL5dcFeZA2g&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
+                                   className="w-full group-hover:scale-105 transition-all"
+                                 />
+                               </Link>
+                             </div>
+                             
+                           </div>
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           Amera
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><MdOutlineMarkEmailRead/>amera@123gmail.com</span>
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><FaPhone/>6794857689</span>
+                         </TableCell>
+                          <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><BsCalendarDate/>24-4-24</span>
+                         </TableCell>
+                         
+                     </TableRow>
+
+                       <TableRow>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <Checkbox {...label} size="small" />
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <div className="flex items-center gap-4 w-[300px]">
+                             <div className="img w-[65px] h-[65px] rounded-md overflow-hidden group">
+                               <Link to="/product/45745">
+                                 <img
+                                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBSXlY1UTgcbqbMqbQMv5FJ2ZTL5dcFeZA2g&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzg5eipZ2fMYRlTkAh5vH6H4UP7Uq_4DzSjA&s"
+                                   className="w-full group-hover:scale-105 transition-all"
+                                 />
+                               </Link>
+                             </div>
+                             
+                           </div>
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           Amera
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><MdOutlineMarkEmailRead/>amera@123gmail.com</span>
+                         </TableCell>
+                         <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><FaPhone/>6794857689</span>
+                         </TableCell>
+                          <TableCell style={{ minWidth: columns.minWidth }}>
+                           <span className="flex items-center gap-2"><BsCalendarDate/>24-4-24</span>
+                         </TableCell>
+                         
                      </TableRow>
                      </TableBody>
                    </Table>

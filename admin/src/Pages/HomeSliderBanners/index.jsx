@@ -1,10 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
 import { Button } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
-import Progress from "../../Components/ProgressBar";
 import { AiOutlineEdit } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -16,7 +13,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import SearchBox from "../../Components/SearchBox";
 import { useContext } from "react";
 import { MyContext } from "../../App"; 
 
@@ -33,14 +29,12 @@ const columns = [
 
 export const HomeSliderBanners=()=>{
 
-      const[categoryFilterVal,setcategoryFilterVal]= useState('');
+      
       const [rowsPerPage, setRowsPerPage] = React.useState(10);
       const [page, setPage] = React.useState(0);
 
            const context = useContext(MyContext);
-       const handleChangeCatFilter = (event) => {
-    setcategoryFilterVal(event.target.value);
-  };
+     
 
   const handleChangePage = (event,newPage) => {
     setPage(newPage);

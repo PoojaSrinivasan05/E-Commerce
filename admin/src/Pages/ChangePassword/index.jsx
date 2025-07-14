@@ -11,18 +11,13 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-const Login = () => {
-  const [loadingGoogle, setLoadingGoogle] = useState(false);
-  const [loadingFb, setLoadingFb] = useState(false);
+const ChangePassword = () => {
+
 
   const [isPasswordShow, setisPasswordShow] = useState(false);
-  function handleClickGoogle() {
-    setLoadingGoogle(true);
-  }
-
-  function handleClickFb() {
-    setLoadingFb(true);
-  }
+    const [isPasswordShow2, setisPasswordShow2] = useState(false);
+ 
+ 
   return (
     <section className="bg-white  w-full">
       <header className="w-full fixed top-0 left-0  px-4 py-3 flex items-center justify-between z-50">
@@ -56,55 +51,15 @@ const Login = () => {
 
         <h1 className="text-center text-[35px] font-[800] mt-4">
           Welcome Back! <br />
-          Sign in with your credentials.
+          You can change your passsword here.
         </h1>
-
-        <div className="flex  items-center justify-center w-full mt-5 gap-4">
-          <LoadingButton
-            size="small"
-            onClick={handleClickGoogle}
-            endIcon={<FcGoogle className="text-[80px]" />}
-            loading={loadingGoogle}
-            loadingPosition="end"
-            variant="outlined"
-            className="!bg-none  !py-2  !text-[15px] !capitalize !px-5 !text-[rgba(0,0,0,0.8)]"
-          >
-            Signin with Google
-          </LoadingButton>
-          <LoadingButton
-            size="small"
-            onClick={handleClickFb}
-            endIcon={<FaFacebookF className="text-[80px]" />}
-            loading={loadingFb}
-            loadingPosition="end"
-            variant="outlined"
-            className="!bg-none !text-[15px] !py-2 !capitalize !px-5 !text-[rgba(0,0,0,0.8)]"
-          >
-            Signin with Facebook
-          </LoadingButton>
-        </div>
 
         <br />
 
-        <div className="w-full flex items-center justify-center gap-3">
-          <span className="flex items-center w-[100px] h-[1px] bg-[rgba(0,0,0,0.2)]"></span>
-          <span className="text-[14px] font-500">
-            Or,Sign in with your email
-          </span>
-          <span className="flex items-center w-[100px] h-[1px]  bg-[rgba(0,0,0,0.2)]"></span>
-        </div>
-
-        <form>
+        <form className="w-full px-8 mt-3">
+        
           <div className="form-group mb-4 w-full">
-            <h4 className="text-[14px] font-[500] mb-1">Email</h4>
-            <input
-              type="email"
-              className="w-full h-[50px] border-2 border-[rgba(0,0,0,0.1)] rounded-md focus:border-[rgba(0,0,0,0.7)] focus:outline-none px-3"
-            />
-          </div>
-
-          <div className="form-group mb-4 w-full">
-            <h4 className="text-[14px] font-[500] mb-1">Password</h4>
+            <h4 className="text-[14px] font-[500] mb-1">New Password</h4>
             <div className="relative w-full">
               <input
                 type={isPasswordShow=== false ? 'password':'text'}
@@ -121,24 +76,29 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="form-group justify-between  flex items-center mb-4 w-full">
-            <FormControlLabel
-              control={<Checkbox defaultChecked />}
-              label="Remember Me"
-            />
-            <Link
-              to="/forgot-password"
-              className="text-primary font-[700] hover:text-gray-700 hover:underline text-[15px]"
-            >
-              Forgot Password?
-            </Link>
+           <div className="form-group mb-4 w-full">
+            <h4 className="text-[14px] font-[500] mb-1">Confirm Password</h4>
+            <div className="relative w-full">
+              <input
+                type={isPasswordShow2=== false ? 'password':'text'}
+                className="w-full h-[50px] border-2 border-[rgba(0,0,0,0.1)] rounded-md focus:border-[rgba(0,0,0,0.7)] focus:outline-none px-3"
+              />
+              <Button className="!absolute top-[7px] right-[10px] z-50 !w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-gray-600" onClick={()=>setisPasswordShow2(!isPasswordShow2)}>
+                {
+                  isPasswordShow2=== false ?  (<FaEyeSlash className="text-[16px]" />) : (
+                     <FaEye className="text-[16px]" />
+                  )
+                }
+                
+              </Button>
+            </div>
           </div>
 
-          <Button className="btn-blue btn-lg w-full">Sign In</Button>
+          <Button className="btn-blue btn-lg w-full">Change Password</Button>
         </form>
       </div>
     </section>
   );
 };
 
-export default Login;
+export default ChangePassword;

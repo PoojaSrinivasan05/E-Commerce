@@ -25,6 +25,9 @@ import AddCategory from "./Pages/Category/addCategory";
 import AddSubCategory from "./Pages/Category/addSubCategory ";
 import Users from "./Pages/Users/index ";
 import Orders from "./Pages/Orders";
+import VerifyAccount from "./Pages/verifyAccount";
+import ForgotPassword from "./Pages/ForgotPasword";
+import ChangePassword from "./Pages/ChangePassword";
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -195,10 +198,33 @@ const [isOpenFullScreenPanel,setIsOpenFullScreenPanel] = useState({
             </>
       ),
     },
-
-
-   
-    
+     {
+       path:"/forgot-password",
+      exact:true,
+      element:(
+        <>
+        <ForgotPassword/>
+        </>
+      ),
+    },
+    {
+       path:"/verify-account",
+      exact:true,
+      element:(
+        <>
+        <VerifyAccount/>
+        </>
+      ),
+    },
+     {
+       path:"/change-password",
+      exact:true,
+      element:(
+        <>
+        <ChangePassword/>
+        </>
+      ),
+    },   
     
   ]);
    
