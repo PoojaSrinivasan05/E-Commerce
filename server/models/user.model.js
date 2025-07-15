@@ -53,15 +53,17 @@ const userSchema=mongoose.Schema({
             ref:'order'
         }
     ],
-    forgot_password_expiry:{
-        type:String,
-        default:""
-    },
-    role:{
+     otp:{
+        type:String
+     },
+     otpExpires:{
+        type:Date
+     },
+     role:{
         type:String,
         enum:['ADMIN','USER'],
         default:"USER"
-    }
+     }
 },{
     timestamps:true
 }
