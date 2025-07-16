@@ -3,6 +3,7 @@ import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import sendEmailFun from '../config/sendEmail.js';
 import VerificationEmail from '../utils/verifyEmailTemplate.js';
+import { useReducer } from 'react';
 ;
 
 export async function registerUserController(request,response) {
@@ -68,4 +69,42 @@ export async function registerUserController(request,response) {
             success:false
         })
     }    
+}
+
+
+export async function verifyEmailController(request,response){
+    try{
+        const{email , otp} = req.body
+    const user = await UserModel.findOne({email:email})  
+ if(!user){
+    return response.status(400).json({
+        message : "User not found",
+        error:true,
+        success:false
+    })
+ } 
+
+ const isCodeValid = user.otp === otp;
+ const isNotExpired = user.otpExpires > Date.now();
+
+ if(isCodeValid && isNotExpired){
+    user.verify_email = true;
+    user.otp = null;
+    user.otpExpires = null;
+    await user.save();
+    return res.status(200).json({error:false,success:true,message:"Email verified Successfully"});
+ }else if(!isCodeValid){
+    return res.status(400).json({error:true,success:false,message:"Invalid OTP"});
+ }
+ {
+    return res.status(400).json({error:true,success:false,message:" OTP Expired"});
+ }
+
+}catch(error){
+    return response.status(500).json({
+        message : error.message || error,
+        error:true,
+        success:false
+    })
+}
 }
