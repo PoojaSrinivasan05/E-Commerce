@@ -24,7 +24,7 @@ const userSchema=mongoose.Schema({
     },
     verify_email:{
         type:Boolean,
-        defaul:false
+        default:false
     },
     last_login_date:{
         type:Date,

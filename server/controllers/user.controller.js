@@ -3,8 +3,6 @@ import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import sendEmailFun from '../config/sendEmail.js';
 import VerificationEmail from '../utils/verifyEmailTemplate.js';
-import { useReducer } from 'react';
-;
 
 export async function registerUserController(request,response) {
     try{
@@ -42,11 +40,11 @@ export async function registerUserController(request,response) {
     });
     await user.save()
 
-    const verifyEmail = await sendEmailFun({
-        sendTo:email,
-        subject:"Verify email from Ecommerce App",
-        text:"",
-        html:VerificationEmail(name,verifyCode)
+         const verifyEmail = await sendEmailFun({
+        sendTo: email,
+        subject: "Verify your email - Ecommerce App",
+        text: `Your verification code is ${verifyCode}`,
+        html: VerificationEmail(name, verifyCode)
     })
 
     const token = jwt.sign(
@@ -72,39 +70,114 @@ export async function registerUserController(request,response) {
 }
 
 
-export async function verifyEmailController(request,response){
+export async function verifyEmailController(request, response){
     try{
-        const{email , otp} = req.body
-    const user = await UserModel.findOne({email:email})  
- if(!user){
-    return response.status(400).json({
-        message : "User not found",
-        error:true,
-        success:false
-    })
- } 
+        const { email, otp } = request.body;
+        const user = await UserModel.findOne({ email: email });
+        if (!user) {
+            return response.status(400).json({
+                message: "User not found",
+                error: true,
+                success: false
+            })
+        }
 
- const isCodeValid = user.otp === otp;
- const isNotExpired = user.otpExpires > Date.now();
+        const isCodeValid = user.otp === otp;
+        const isNotExpired = user.otpExpires > Date.now();
 
- if(isCodeValid && isNotExpired){
-    user.verify_email = true;
-    user.otp = null;
-    user.otpExpires = null;
-    await user.save();
-    return res.status(200).json({error:false,success:true,message:"Email verified Successfully"});
- }else if(!isCodeValid){
-    return res.status(400).json({error:true,success:false,message:"Invalid OTP"});
- }
- {
-    return res.status(400).json({error:true,success:false,message:" OTP Expired"});
- }
+        if (isCodeValid && isNotExpired) {
+            user.verify_email = true;
+            user.otp = null;
+            user.otpExpires = null;
+            await user.save();
+            return response.status(200).json({ error: false, success: true, message: "Email verified successfully" });
+        } else if (!isCodeValid) {
+            return response.status(400).json({ error: true, success: false, message: "Invalid OTP" });
+        } else {
+            return response.status(400).json({ error: true, success: false, message: "OTP expired" });
+        }
 
-}catch(error){
-    return response.status(500).json({
-        message : error.message || error,
-        error:true,
-        success:false
-    })
+    }catch(error){
+        return response.status(500).json({
+            message : error.message || error,
+            error:true,
+            success:false
+        })
+    }
 }
+
+export async function loginUserController(request, response) {
+  try {
+    const { email, password } = request.body;
+    if (!email || !password) {
+      return response.status(400).json({
+        message: "Provide email and password",
+        error: true,
+        success: false
+      });
+    }
+
+    const user = await UserModel.findOne({ email: email });
+    if (!user) {
+      return response.status(400).json({
+        message: "Invalid credentials",
+        error: true,
+        success: false
+      });
+    }
+
+    const isMatch = await bcryptjs.compare(password, user.password);
+    if (!isMatch) {
+      return response.status(400).json({
+        message: "Invalid credentials",
+        error: true,
+        success: false
+      });
+    }
+
+    const token = jwt.sign(
+      { email: user.email, id: user._id },
+      process.env.JSON_WEB_TOKEN_SECRET_KEY,
+      { expiresIn: "7d" }
+    );
+
+    return response.status(200).json({
+      success: true,
+      error: false,
+      message: "Login successful",
+      token: token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        avatar: user.avatar,
+        role: user.role,
+        verify_email: user.verify_email
+      }
+    });
+  } catch (error) {
+    return response.status(500).json({
+      message: error.message || error,
+      error: true,
+      success: false
+    });
+  }
+}
+
+export async function getMeController(request, response) {
+  try {
+    const authHeader = request.headers.authorization || "";
+    const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : null;
+    if (!token) {
+      return response.status(401).json({ message: "Unauthorized", error: true, success: false });
+    }
+    const decoded = jwt.verify(token, process.env.JSON_WEB_TOKEN_SECRET_KEY);
+    const user = await UserModel.findById(decoded.id).select("-password");
+    if (!user) {
+      return response.status(404).json({ message: "User not found", error: true, success: false });
+    }
+    return response.status(200).json({ success: true, error: false, data: user });
+  } catch (error) {
+    return response.status(401).json({ message: "Invalid token", error: true, success: false });
+  }
 }
